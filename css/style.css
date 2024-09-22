@@ -18,7 +18,7 @@ html {
 
 body {
   font-family: "Nunito", sans-serif;
-  color: #6D5D4B;
+  color: #6d5d4b;
   font-weight: 300;
   line-height: 1.6;
 }
@@ -26,7 +26,7 @@ body {
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
 @media only screen and (max-width: 62.5em) {
   .container {
@@ -60,7 +60,7 @@ body {
   color: #f9f7f6;
 }
 .heading-2--dark {
-  color: #54483A;
+  color: #54483a;
 }
 
 .heading-3 {
@@ -76,7 +76,7 @@ body {
   color: #f9f7f6;
 }
 .heading-4--dark {
-  color: #54483A;
+  color: #54483a;
 }
 
 .btn {
@@ -92,7 +92,7 @@ body {
   transition: all 0.2s;
 }
 .btn:hover {
-  background-color: #B28451;
+  background-color: #b28451;
 }
 
 .mb-sm {
@@ -112,7 +112,7 @@ body {
 }
 
 .header {
-  background-color: #54483A;
+  background-color: #54483a;
   grid-column: full-start/col-end 6;
   background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
   background-size: cover;
@@ -168,6 +168,56 @@ body {
   max-height: 2.5rem;
   max-width: 100%;
   filter: brightness(70%);
+}
+
+.sidebar {
+  background-color: #c69963;
+  grid-column: sidebar-start/sidebar-end;
+  grid-row: 1/-1;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 62.5em) {
+  .sidebar {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem;
+}
+.nav-btn::before, .nav-btn::after {
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  content: "";
+  display: block;
+}
+.nav-btn::before {
+  transform: translateY(-1.5rem);
+}
+.nav-btn::after {
+  transform: translateY(1.3rem);
+}
+@media only screen and (max-width: 62.5em) {
+  .nav-btn {
+    margin-top: 0;
+    margin-right: 3rem;
+  }
+  .nav-btn::before {
+    transform: translateY(-1.2rem);
+  }
+  .nav-btn::after {
+    transform: translateY(1rem);
+  }
 }
 
 .realtors {
